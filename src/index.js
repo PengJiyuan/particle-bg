@@ -12,7 +12,7 @@ class Particle {
    */
   constructor(element, config = {}) {
     this.element = document.querySelector(element);
-    this.color = config.color;
+    this.color = config.color || '#fff';
     this.width = this.element.clientWidth;
     this.height = this.element.clientHeight;
     this.distance = config.distance || 150;

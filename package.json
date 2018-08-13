@@ -4,7 +4,7 @@
   "description": "Insert particles into background.",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup -c -f umd -n ParticleBg -o ./lib/particle-bg.umd.min.js -w",
+    "dev": "rollup -c -f umd -n particleBg -o ./lib/particle-bg.umd.min.js -w",
     "build-cjs": "rollup -c -f cjs -o ./lib/particle-bg.cjs.js",
     "build-umd-min": "rollup -c -f umd -n particleBg -o ./lib/particle-bg.umd.min.js --environment min",
     "build-es": "rollup -c -f es -o ./lib/particle-bg.es.js",
