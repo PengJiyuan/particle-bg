@@ -65,7 +65,7 @@ particleBg('body');
 
 #### config.distance
 
-`default: 150`
+`default: width / 10`
 
 粒子间距小于多少会连线
 
