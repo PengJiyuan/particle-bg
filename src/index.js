@@ -9,6 +9,7 @@ class Particle {
    * @param {Number} config.count
    * @param {Number} config.zIndex
    * @param {Float} config.rate
+   * @param {Boolean} config.resize
    */
   constructor(element, config = {}) {
     this.element = document.querySelector(element);
@@ -21,9 +22,21 @@ class Particle {
     this.count = config.count || 100;
     this.zIndex = config.zIndex || 1;
     this.rate = config.rate || this.width / 10000;
+    this.resize = config.resize || true;
     this.appendCanvas();
     for (let i = 0; i < this.count; i++) {
       this.points.push(this.getPoint());
+    }
+
+    if (this.resize) {
+      window.onresize = () => {
+        this.width = this.element.clientWidth;
+        this.height = this.element.clientHeight;
+        this.distance = config.distance || this.width / 10;
+        this.rate = config.rate || this.width / 10000;
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+      };
     }
   }
 
