@@ -71,7 +71,7 @@ particleBg('body');
 
 #### config.rate
 
-`default: 0.2`
+`default: width / 10000`
 
 粒子运动的速率
 
