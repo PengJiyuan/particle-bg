@@ -1,5 +1,6 @@
 # particle-bg
-Insert particles into background.
+
+生成粒子背景。
 
 ## Install
 
