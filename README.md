@@ -59,7 +59,7 @@ particleBg('body');
 
 #### config.radius
 
-`default: 1`
+`default: 2`
 
 粒子的半径
 
