@@ -20,7 +20,7 @@ class Particle {
     this.points = [];
     this.count = config.count || 100;
     this.zIndex = config.zIndex || 1;
-    this.rate = config.rate || 0.2;
+    this.rate = config.rate || this.width / 10000;
     this.appendCanvas();
     for (let i = 0; i < this.count; i++) {
       this.points.push(this.getPoint());
