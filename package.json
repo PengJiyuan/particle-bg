@@ -1,0 +1,25 @@
+{
+  "name": "particle-bg",
+  "version": "0.0.0",
+  "description": "Insert particles into background.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PengJiyuan/particle-bg.git"
+  },
+  "keywords": [
+    "particles",
+    "background",
+    "effect",
+    "animation"
+  ],
+  "author": "PengJiyuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PengJiyuan/particle-bg/issues"
+  },
+  "homepage": "https://github.com/PengJiyuan/particle-bg#readme"
+}
