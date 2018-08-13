@@ -1,3 +1,5 @@
+import scale from './scale';
+
 class Particle {
   /**
    * @param {DOM} element
@@ -36,6 +38,10 @@ class Particle {
         this.rate = config.rate || this.width / 10000;
         this.canvas.width = this.width;
         this.canvas.height = this.height;
+        scale([this.canvas], {
+          width: this.width,
+          height: this.height
+        });
       };
     }
   }
@@ -60,6 +66,10 @@ class Particle {
     this.ctx = this.canvas.getContext('2d');
     this.canvas.width = this.width;
     this.canvas.height = this.height;
+    scale([this.canvas], {
+      width: this.width,
+      height: this.height
+    });
     this.canvas.style.zIndex = this.zIndex;
     this.element.appendChild(this.canvas);
   }
