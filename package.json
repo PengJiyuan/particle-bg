@@ -4,7 +4,11 @@
   "description": "Insert particles into background.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "rollup -c -f umd -n ParticleBg -o ./lib/particle-bg.umd.min.js -w",
+    "build-cjs": "rollup -c -f cjs -o ./lib/particle-bg.cjs.js",
+    "build-umd-min": "rollup -c -f umd -n ParticleBg -o ./lib/particle-bg.umd.min.js --environment min",
+    "build-es": "rollup -c -f es -o ./lib/particle-bg.es.js",
+    "build-all": "npm run build-cjs && npm run build-umd-min && npm run build-es"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/PengJiyuan/particle-bg/issues"
   },
-  "homepage": "https://github.com/PengJiyuan/particle-bg#readme"
+  "homepage": "https://github.com/PengJiyuan/particle-bg#readme",
+  "devDependencies": {
+    "rollup": "^0.64.1",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-uglify": "^4.0.0"
+  },
+  "files": [
+    "lib/"
+  ]
 }
