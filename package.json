@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "rollup -c -f umd -n ParticleBg -o ./lib/particle-bg.umd.min.js -w",
     "build-cjs": "rollup -c -f cjs -o ./lib/particle-bg.cjs.js",
-    "build-umd-min": "rollup -c -f umd -n ParticleBg -o ./lib/particle-bg.umd.min.js --environment min",
+    "build-umd-min": "rollup -c -f umd -n particleBg -o ./lib/particle-bg.umd.min.js --environment min",
     "build-es": "rollup -c -f es -o ./lib/particle-bg.es.js",
     "build-all": "npm run build-cjs && npm run build-umd-min && npm run build-es",
     "add": "git add ."
