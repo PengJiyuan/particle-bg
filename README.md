@@ -12,7 +12,7 @@ npm i particle-bg
 
 #### CDN
 
-TODO...
+[https://unpkg.com/particle-bg/lib/particle-bg.umd.min.js](https://unpkg.com/particle-bg/lib/particle-bg.umd.min.js)
 
 ## Usage
 
@@ -27,7 +27,7 @@ particleBg('body');
 #### Browser
 
 ```html
-<script src="/path/particle-bg.min.js"></script>
+<script src="https://unpkg.com/particle-bg/lib/particle-bg.umd.min.js"></script>
 <script>
   particleBg('body');
 </script>
