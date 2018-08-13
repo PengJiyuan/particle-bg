@@ -81,6 +81,12 @@ particleBg('body');
 
 canvas的z-index.
 
+#### config.resize
+
+`default: true`
+
+是否监听`window.resize`，自动缩放粒子背景。
+
 ## LICENSE
 
 [MIT](./LICENSE) © PengJiyuan
