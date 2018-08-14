@@ -1,6 +1,6 @@
 {
   "name": "particle-bg",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Insert particles into background.",
   "main": "index.js",
   "scripts": {
