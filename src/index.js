@@ -25,6 +25,7 @@ class Particle {
     this.zIndex = config.zIndex || 1;
     this.rate = config.rate || this.width / 10000;
     this.resize = config.resize || true;
+    this.line = config.line || true;
     this.appendCanvas();
     for (let i = 0; i < this.count; i++) {
       this.points.push(this.getPoint());
@@ -77,7 +78,9 @@ class Particle {
   draw() {
     this.ctx.clearRect(0, 0, this.width, this.height);
     this.drawPoints();
-    this.drawLines();
+    if (this.line) {
+      this.drawLines();
+    }
     window.requestAnimationFrame(this.draw.bind(this));
   }
 
