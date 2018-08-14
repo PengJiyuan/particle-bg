@@ -12,6 +12,7 @@ class Particle {
    * @param {Number} config.zIndex
    * @param {Float} config.rate
    * @param {Boolean} config.resize
+   * @param {Boolean} config.resize
    */
   constructor(element, config = {}) {
     this.element = document.querySelector(element);
@@ -24,8 +25,8 @@ class Particle {
     this.count = config.count || 100;
     this.zIndex = config.zIndex || 1;
     this.rate = config.rate || this.width / 10000;
-    this.resize = config.resize || true;
-    this.line = config.line || true;
+    this.resize = typeof config.resize === 'boolean' ? config.resize : true;
+    this.line = typeof config.line === 'boolean' ? config.line : true;
     this.appendCanvas();
     for (let i = 0; i < this.count; i++) {
       this.points.push(this.getPoint());

@@ -87,6 +87,12 @@ canvas的z-index.
 
 是否监听`window.resize`，自动缩放粒子背景。
 
+#### config.line
+
+`default: true`
+
+粒子之间是否连线。
+
 ## LICENSE
 
 [MIT](./LICENSE) © PengJiyuan
