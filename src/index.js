@@ -12,7 +12,7 @@ class Particle {
    * @param {Number} config.zIndex
    * @param {Float} config.rate
    * @param {Boolean} config.resize
-   * @param {Boolean} config.resize
+   * @param {Boolean} config.bounce
    */
   constructor(element, config = {}) {
     this.element = document.querySelector(element);
@@ -27,6 +27,7 @@ class Particle {
     this.rate = config.rate || this.width / 10000;
     this.resize = typeof config.resize === 'boolean' ? config.resize : true;
     this.line = typeof config.line === 'boolean' ? config.line : true;
+    this.bounce = typeof config.bounce === 'boolean' ? config.bounce : false;
     this.appendCanvas();
     for (let i = 0; i < this.count; i++) {
       this.points.push(this.getPoint());
@@ -91,12 +92,28 @@ class Particle {
       this.ctx.arc(item.x, item.y, item.r, 0, Math.PI*2, false);
       this.ctx.fillStyle = this.color;
       this.ctx.fill();
-      if(item.x > 0 && item.x < this.width && item.y > 0 && item.y < this.height) {
-        item.x += item.rateX * this.rate;
-        item.y += item.rateY * this.rate;
+      if (this.bounce) {
+        if (item.x >= item.r && item.x <= this.width - item.r && item.y >= item.r && item.y <= this.height - item.r) {
+          item.x += item.rateX * this.rate;
+          item.y += item.rateY * this.rate;
+        } else {
+          if (item.x < item.r || item.x > this.width - item.r) {
+            item.rateX = -item.rateX;
+          }
+          if (item.y < item.r || item.y > this.height - item.r) {
+            item.rateY = -item.rateY;
+          }
+          item.x += item.rateX * this.rate;
+          item.y += item.rateY * this.rate;
+        }
       } else {
-        this.points.splice(i, 1);
-        this.points.push(this.getPoint(this.radius));
+        if(item.x >= 0 - item.r && item.x <= this.width + item.r && item.y >= 0 - item.r && item.y <= this.height + item.r) {
+          item.x += item.rateX * this.rate;
+          item.y += item.rateY * this.rate;
+        } else {
+          this.points.splice(i, 1);
+          this.points.push(this.getPoint(this.radius));
+        }
       }
     });
   }

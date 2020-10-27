@@ -93,6 +93,12 @@ canvas的z-index.
 
 粒子之间是否连线。
 
+#### config.bounce
+
+`default: false`
+
+是否触碰边界进行反弹。
+
 ## LICENSE
 
 [MIT](./LICENSE) © PengJiyuan
