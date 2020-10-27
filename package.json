@@ -2,7 +2,8 @@
   "name": "particle-bg",
   "version": "0.3.2",
   "description": "Insert particles into background.",
-  "main": "index.js",
+  "main": "./lib/particle-bg.cjs.js",
+  "module": "./lib/particle-bg.es.js",
   "scripts": {
     "dev": "rollup -c -f umd -n particleBg -o ./lib/particle-bg.umd.min.js -w",
     "build-cjs": "rollup -c -f cjs -o ./lib/particle-bg.cjs.js",
